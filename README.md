@@ -3,6 +3,7 @@
 This mod takes a somewhat hacky approach to adding a simple flashing animation to the heart bar in Mineclone 2.
 
 Example:
+
 ![example gif](https://github.com/fennelfox/fennelfox.github.io/blob/5701ad0dcbe730c5384db691483407c6cff59fc1/demo3.gif)
 
 Changelog
