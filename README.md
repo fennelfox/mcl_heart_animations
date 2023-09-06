@@ -4,7 +4,7 @@ This mod takes a somewhat hacky approach to adding a flashing and shaking animat
 
 Example:
 
-![example gif](https://github.com/fennelfox/fennelfox.github.io/blob/5701ad0dcbe730c5384db691483407c6cff59fc1/demo3.gif)
+![example gif](https://github.com/fennelfox/fennelfox.github.io/blob/aadb05922a8ae8f20e4f5e7be897991d11acdab0/demo4.gif)
 
 Changelog
 
