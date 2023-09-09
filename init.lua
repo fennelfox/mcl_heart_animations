@@ -3,7 +3,7 @@ function clamp(val, lower, upper)
 end
 
 minetest.register_on_joinplayer(function(player)
-
+    hb.hide_hudbar(player, "health")
 -- define 10 individual heart bars (one per heart)
 
     h1 = player:hud_add({
@@ -39,7 +39,7 @@ minetest.register_on_joinplayer(function(player)
 		hud_elem_type = "statbar",
 		position = {x = 0.5, y = 1},
 		size = {x = 24, y = 24},
-		text = "hudbars_bgicon_health.png",
+		text = "hudbars_icon_health.png",
 		number = 2,
 		text2 = "hudbars_bgicon_health.png",
 		item = 2,
@@ -53,7 +53,7 @@ minetest.register_on_joinplayer(function(player)
 		hud_elem_type = "statbar",
 		position = {x = 0.5, y = 1},
 		size = {x = 24, y = 24},
-		text = "hudbars_bgicon_health.png",
+		text = "hudbars_icon_health.png",
 		number = 2,
 		text2 = "hudbars_bgicon_health.png",
 		item = 2,
@@ -67,7 +67,7 @@ minetest.register_on_joinplayer(function(player)
 		hud_elem_type = "statbar",
 		position = {x = 0.5, y = 1},
 		size = {x = 24, y = 24},
-		text = "hudbars_bgicon_health.png",
+		text = "hudbars_icon_health.png",
 		number = 2,
 		text2 = "hudbars_bgicon_health.png",
 		item = 2,
@@ -81,7 +81,7 @@ minetest.register_on_joinplayer(function(player)
 		hud_elem_type = "statbar",
 		position = {x = 0.5, y = 1},
 		size = {x = 24, y = 24},
-		text = "hudbars_bgicon_health.png",
+		text = "hudbars_icon_health.png",
 		number = 2,
 		text2 = "hudbars_bgicon_health.png",
 		item = 2,
@@ -95,7 +95,7 @@ minetest.register_on_joinplayer(function(player)
 		hud_elem_type = "statbar",
 		position = {x = 0.5, y = 1},
 		size = {x = 24, y = 24},
-		text = "hudbars_bgicon_health.png",
+		text = "hudbars_icon_health.png",
 		number = 2,
 		text2 = "hudbars_bgicon_health.png",
 		item = 2,
@@ -109,7 +109,7 @@ minetest.register_on_joinplayer(function(player)
 		hud_elem_type = "statbar",
 		position = {x = 0.5, y = 1},
 		size = {x = 24, y = 24},
-		text = "hudbars_bgicon_health.png",
+		text = "hudbars_icon_health.png",
 		number = 2,
 		text2 = "hudbars_bgicon_health.png",
 		item = 2,
@@ -123,7 +123,7 @@ minetest.register_on_joinplayer(function(player)
 		hud_elem_type = "statbar",
 		position = {x = 0.5, y = 1},
 		size = {x = 24, y = 24},
-		text = "hudbars_bgicon_health.png",
+		text = "hudbars_icon_health.png",
 		number = 2,
 		text2 = "hudbars_bgicon_health.png",
 		item = 2,
@@ -137,7 +137,7 @@ minetest.register_on_joinplayer(function(player)
 		hud_elem_type = "statbar",
 		position = {x = 0.5, y = 1},
 		size = {x = 24, y = 24},
-		text = "hudbars_bgicon_health.png",
+		text = "hudbars_icon_health.png",
 		number = 2,
 		text2 = "hudbars_bgicon_health.png",
 		item = 2,
@@ -152,13 +152,12 @@ end
 
 minetest.register_globalstep(function(dtime)
     for _,player in pairs(minetest.get_connected_players()) do
-
+        hb.hide_hudbar(player, "health")
         if player:get_hp() <= 4 then      
             -- shake one frame every globalstep
-            hb.hide_hudbar(player, "health")
             shake_once(player)                    
         else     
-            hb.unhide_hudbar(player, "health")            
+                      
             reset_pos(player)
         end
     end
@@ -201,14 +200,22 @@ function flash_on(player)
     player:hud_change(h1, "text2", "hudbars_bgicon_health2.png")
     player:hud_change(h2, "text", "hudbars_icon_health2.png")
     player:hud_change(h2, "text2", "hudbars_bgicon_health2.png")
-    player:hud_change(h3, "text", "hudbars_bgicon_health2.png")
-    player:hud_change(h4, "text", "hudbars_bgicon_health2.png")
-    player:hud_change(h5, "text", "hudbars_bgicon_health2.png")
-    player:hud_change(h6, "text", "hudbars_bgicon_health2.png")
-    player:hud_change(h7, "text", "hudbars_bgicon_health2.png")
-    player:hud_change(h8, "text", "hudbars_bgicon_health2.png")
-    player:hud_change(h9, "text", "hudbars_bgicon_health2.png")
-    player:hud_change(h10, "text", "hudbars_bgicon_health2.png")
+    player:hud_change(h3, "text", "hudbars_icon_health2.png")
+    player:hud_change(h4, "text", "hudbars_icon_health2.png")
+    player:hud_change(h5, "text", "hudbars_icon_health2.png")
+    player:hud_change(h6, "text", "hudbars_icon_health2.png")
+    player:hud_change(h7, "text", "hudbars_icon_health2.png")
+    player:hud_change(h8, "text", "hudbars_icon_health2.png")
+    player:hud_change(h9, "text", "hudbars_icon_health2.png")
+    player:hud_change(h10, "text", "hudbars_icon_health2.png")
+    player:hud_change(h3, "text2", "hudbars_bgicon_health2.png")
+    player:hud_change(h4, "text2", "hudbars_bgicon_health2.png")
+    player:hud_change(h5, "text2", "hudbars_bgicon_health2.png")
+    player:hud_change(h6, "text2", "hudbars_bgicon_health2.png")
+    player:hud_change(h7, "text2", "hudbars_bgicon_health2.png")
+    player:hud_change(h8, "text2", "hudbars_bgicon_health2.png")
+    player:hud_change(h9, "text2", "hudbars_bgicon_health2.png")
+    player:hud_change(h10, "text2", "hudbars_bgicon_health2.png")
 
 end
 
@@ -218,44 +225,58 @@ function flash_off(player)
     player:hud_change(h1, "text2", "hudbars_bgicon_health.png")
     player:hud_change(h2, "text", "hudbars_icon_health.png")
     player:hud_change(h2, "text2", "hudbars_bgicon_health.png")
-    player:hud_change(h3, "text", "hudbars_bgicon_health.png")
-    player:hud_change(h4, "text", "hudbars_bgicon_health.png")
-    player:hud_change(h5, "text", "hudbars_bgicon_health.png")
-    player:hud_change(h6, "text", "hudbars_bgicon_health.png")
-    player:hud_change(h7, "text", "hudbars_bgicon_health.png")
-    player:hud_change(h8, "text", "hudbars_bgicon_health.png")
-    player:hud_change(h9, "text", "hudbars_bgicon_health.png")
-    player:hud_change(h10, "text", "hudbars_bgicon_health.png")
+    player:hud_change(h3, "text", "hudbars_icon_health.png")
+    player:hud_change(h4, "text", "hudbars_icon_health.png")
+    player:hud_change(h5, "text", "hudbars_icon_health.png")
+    player:hud_change(h6, "text", "hudbars_icon_health.png")
+    player:hud_change(h7, "text", "hudbars_icon_health.png")
+    player:hud_change(h8, "text", "hudbars_icon_health.png")
+    player:hud_change(h9, "text", "hudbars_icon_health.png")
+    player:hud_change(h10, "text", "hudbars_icon_health.png")
+    player:hud_change(h3, "text2", "hudbars_bgicon_health.png")
+    player:hud_change(h4, "text2", "hudbars_bgicon_health.png")
+    player:hud_change(h5, "text2", "hudbars_bgicon_health.png")
+    player:hud_change(h6, "text2", "hudbars_bgicon_health.png")
+    player:hud_change(h7, "text2", "hudbars_bgicon_health.png")
+    player:hud_change(h8, "text2", "hudbars_bgicon_health.png")
+    player:hud_change(h9, "text2", "hudbars_bgicon_health.png")
+    player:hud_change(h10, "text2", "hudbars_bgicon_health.png")
 
 end
 
 minetest.register_on_player_hpchange(function(player, hp_change)  
-
     player:hud_change(h1, "number", clamp(player:get_hp() + hp_change, 0, 2))
-    player:hud_change(h2, "number", clamp(player:get_hp() + hp_change, 2, 4) - 2 )
+    player:hud_change(h2, "number", clamp(player:get_hp() + hp_change, 2, 4) - 2)
+    player:hud_change(h3, "number", clamp(player:get_hp() + hp_change, 4, 6) - 4)
+    player:hud_change(h4, "number", clamp(player:get_hp() + hp_change, 6, 8) - 6)
+    player:hud_change(h5, "number", clamp(player:get_hp() + hp_change, 8, 10) - 8)
+    player:hud_change(h6, "number", clamp(player:get_hp() + hp_change, 10, 12) - 10)
+    player:hud_change(h7, "number", clamp(player:get_hp() + hp_change, 12, 14) - 12)
+    player:hud_change(h8, "number", clamp(player:get_hp() + hp_change, 14, 16) - 14)
+    player:hud_change(h9, "number", clamp(player:get_hp() + hp_change, 16, 18) - 16)
+    player:hud_change(h10, "number", clamp(player:get_hp() + hp_change, 18, 20) - 18)
+
 
 
     if hb.players[player:get_player_name()] then
         hp = player:get_hp()
         if hp_change >= 1 then
             --  flash once for healing            
-            hb.change_hudbar(player, "health", health, health_max, "hudbars_icon_health2.png", "hudbars_bgicon_health2.png")
             
             flash_on(player)
 
-            minetest.after(0.2, function(hb1) flash_off(player) hb.change_hudbar(player, "health", health, health_max, "hudbars_icon_health.png", "hudbars_bgicon_health.png") end, hb1)
+            minetest.after(0.2, function(hb1) flash_off(player)  end, hb1)
             
         else
             -- flash twice for getting hurt
-            hb.change_hudbar(player, "health", health, health_max, "hudbars_icon_health2.png", "hudbars_bgicon_health2.png")
             
             flash_on(player)
             
-            minetest.after(0.2, function(hb1) flash_off(player) hb.change_hudbar(player, "health", health, health_max, "hudbars_icon_health.png", "hudbars_bgicon_health.png") end, hb1)
+            minetest.after(0.2, function(hb1) flash_off(player)  end, hb1)
             
-            minetest.after(0.3, function(hb2) flash_on(player) hb.change_hudbar(player, "health", health, health_max, "hudbars_icon_health2.png", "hudbars_bgicon_health2.png") end, hb2)
+            minetest.after(0.3, function(hb2) flash_on(player)end, hb2)
 	        
-            minetest.after(0.4, function(hb1) flash_off(player) hb.change_hudbar(player, "health", health, health_max, "hudbars_icon_health.png", "hudbars_bgicon_health.png") end, hb1)
+            minetest.after(0.4, function(hb1) flash_off(player) end, hb1)
             
         end
     end
