@@ -8,7 +8,9 @@ Example:
 
 Changelog
 
-2.0 - Added a shaking animation when low on hearts (4 hp or less)
+2.1 - Fixed the background not flashing sometimes
+
+2.0b - Added a shaking animation when low on hearts (4 hp or less)
 
 1.1 - Changed the animation so that it flashes twice for damage but only once for healing. (More like Minecraft).
 
