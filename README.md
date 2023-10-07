@@ -8,6 +8,9 @@ Example:
 
 Changelog
 
+3.0 - Fixed and improved most of the code in the mod. Now it should actually work as well as adjusting for creative/survival mode. 
+Also changed the hearts to flash three times for taking damage and twice for healing (actually like minecraft).
+
 2.1 - Fixed the background not flashing sometimes
 
 2.0b - Added a shaking animation when low on hearts (4 hp or less)
