@@ -110,6 +110,8 @@ minetest.register_on_player_hpchange(function(player, hp_change)
             minetest.after(0.15, function() flash_off(player) end)
             minetest.after(0.30, function() flash_on(player) end) --two   
             minetest.after(0.45, function() flash_off(player) end)
+			
+			--reset_pos(player)
         else
             -- flash three times for getting hurt
             
@@ -129,6 +131,10 @@ minetest.register_on_player_hpchange(function(player, hp_change)
 end
 )
 
+-- this resets all the offset hearts to their original position
+minetest.register_on_respawnplayer(function(player)
+    reset_pos(player)
+end)
 
 minetest.register_globalstep(function(dtime)
     for _,player in pairs(minetest.get_connected_players()) do
